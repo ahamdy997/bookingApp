@@ -1,0 +1,124 @@
+<template>
+  <div>
+    <div class="flex items-center w-86 m-auto justify-between h-[68px]">
+      <the-logo></the-logo>
+      <navbar-links></navbar-links>
+      <navbar-user></navbar-user>
+    </div>
+
+    <main class="bg-[#f4f4f4] overflow-hidden">
+      <section class="bg-[#F4F4F4]">
+        <div class="w-86 m-auto">
+          <h2 class="text-[32px] font-semibold mt-[60px]">My trips</h2>
+        </div>
+        <ul>
+          <li class="border rounded-[5px] mt-10 p-5 w-86 m-auto bg-white">
+            <div class="flex gap-6">
+              <img
+                :src="dataStore.myTripImgSrc"
+                alt="hotel"
+                class="h-[200px] rounded-[5px]"
+                width="285"
+                height="200"
+              />
+              <div class="flex w-[60%]">
+                <div>
+                  <h2 class="text-xl font-medium">
+                    {{ dataStore.hotelDetails?.hotel_name }}
+                  </h2>
+                  <div class="flex">
+                    <div v-for="n in 5" :key="n">
+                      <span v-if="n <= stars(dataStore.reviewScore)"
+                        ><figure>
+                          <img
+                            src="../../assets/Stars-for-Search-page/star-s-fill.svg"
+                            alt="stars rating"
+                          /></figure
+                      ></span>
+                      <span v-else-if="n - 0.5 === stars(dataStore.reviewScore)"
+                        ><figure>
+                          <img
+                            src="../../assets/Stars-for-Search-page/star-s-fill 5.svg"
+                            alt="stars rating"
+                          /></figure
+                      ></span>
+                    </div>
+                    <span class="ml-2">
+                      {{
+                        +dataStore.reviewScore % 2 == 0
+                          ? Math.round(+dataStore.reviewScore * 10) / 2 / 10
+                          : Math.round((+dataStore.reviewScore * 10 + 1) / 10) /
+                            2
+                      }}
+                      ({{ dataStore.reviewCount }} Reviews)</span
+                    >
+                  </div>
+                  <p class="text-[#EB5757] mt-[40px]">Non refundable</p>
+                  <p class="text-[#4F4F4F]">
+                    Check in: {{ useKeepDateAlive.checkinDate }}
+                  </p>
+                  <p class="text-[#4F4F4F]">
+                    Check out: {{ useKeepDateAlive.checkoutDate }}
+                  </p>
+                  <p class="text-[#4F4F4F]">
+                    {{
+                      parseInt(
+                        useKeepDateAlive.checkoutDate.replaceAll("-", "")
+                      ) -
+                      parseInt(useKeepDateAlive.checkinDate).replaceAll("-", "")
+                    }}
+                    night stay
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-col justify-center flex-nowrap">
+                <div class="flex items-center gap-2 justify-end">
+                  <p
+                    class="text-[14px] text-[#EB5757] line-through"
+                    v-if="dataStore.strikethroughPrice"
+                  >
+                    $ {{ dataStore.strikethroughPrice }}
+                  </p>
+                  <p class="text-[20px]">$ {{ dataStore.grossPrice }}</p>
+                </div>
+                <p class="text-[#4F4F4F] w-full">Includes taxes and fees</p>
+                <button
+                  class="px-[18px] bg-[var(--mainBlue)] rounded-[6px] text-white mt-[16px] py-[10px]"
+                >
+                  View trip details
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <covid-warning class="mt-[50px]"></covid-warning>
+      </section>
+
+      <footer>
+        <the-footer></the-footer>
+      </footer>
+    </main>
+  </div>
+</template>
+
+<script setup>
+import TheLogo from "../TheNavbar/TheLogo.vue";
+import NavbarLinks from "../TheNavbar/NavbarLinks.vue";
+import NavbarUser from "../TheNavbar/NavbarUser.vue";
+import CovidWarning from "../HomeComponents/CovidWarning/CovidWarning";
+import TheFooter from "../TheFooter/TheFooter.vue";
+import { useAPIData } from "@/stores/APIDataStore.js";
+import { keepDataAlive } from "@/stores/KeepingDataAlive";
+const dataStore = useAPIData();
+const useKeepDateAlive = keepDataAlive();
+const stars = (data) => {
+  return Number(
+    data % 2 == 0
+      ? Math.round(+data * 10) / 2 / 10
+      : Math.round((+data * 10 + 1) / 10) / 2
+  );
+};
+</script>
+
+<style scoped></style>

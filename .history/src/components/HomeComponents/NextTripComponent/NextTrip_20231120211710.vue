@@ -1,0 +1,82 @@
+<template>
+  <section class="w-86 m-auto text-3xl font-semibold">
+    <header>
+      <h2 class="my-16">Get inspiration for your next trip</h2>
+    </header>
+    <ul class="flex justify-between h-72 gap-5 w-full">
+      <li class="bg-no-repeat sedny flex justify-end rounded-lg flex-col">
+        <div class="content mx-auto">
+          <h3 class="font-semibold text-xl mx-5">
+            Sydeny’s 10 most fashionable 5 star hotels
+          </h3>
+          <p class="text-base font-semibold m-5 mt-2.5 font-normal">
+            Browse the fastest growing tourism sector in the heart of Australia
+            tourism capital ....
+          </p>
+        </div>
+      </li>
+
+      <li class="bg-no-repeat rest flex justify-end flex-col rounded-lg">
+        <div class="mx-auto">
+          <h3 class="font-semibold text-xl mx-5">
+            Top cities for Vegan Travellers
+          </h3>
+          <p class="text-base m-5 mt-2.5 font-normal">
+            Top sites where you do not have to worry about being a vegan. Our
+            tourist guide is here...
+          </p>
+        </div>
+      </li>
+
+      <li class="bg-no-repeat nature flex justify-end flex-col rounded-lg">
+        <div class="mx-auto">
+          <h3 class="font-semibold text-xl mx-5 font-normal">
+            World’s top destinations during and post covid timeline
+          </h3>
+          <p class="text-base m-5 mt-2.5 font-normal">
+            Pandemic is still intact and will be here for a longer time. Here’s
+            where your next destination...
+          </p>
+        </div>
+      </li>
+    </ul>
+  </section>
+</template>
+
+<script setup></script>
+
+<style scoped>
+.nature {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url("@/assets/next-trip-images/top-destiniation.jpeg"), lightgray 50%;
+  background-size: cover;
+}
+.rest {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url("@/assets/next-trip-images/resturanat.jpeg"), lightgray 50%;
+  background-size: cover;
+}
+
+.sedny {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url("@/assets/home-images/f05ea716209b4ede5a3107407feb60d4.jpeg"),
+    lightgray 50%;
+  background-size: cover;
+}
+h3,
+p {
+  color: #fff;
+}
+</style>

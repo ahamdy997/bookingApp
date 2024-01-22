@@ -1,0 +1,14 @@
+<template>
+  <div v-for="data in dataX" :key="data.name">
+    {{ data.name }}
+  </div>
+</template>
+
+<script setup>
+import { useAPIData } from "@/stores/APIDataStore";
+const dataStore = useAPIData();
+const dataX = dataStore.hotelSearchData.map((val) => val);
+console.log(dataStore.how.map((val) => val));
+</script>
+
+<style lang="scss" scoped></style>

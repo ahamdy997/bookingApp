@@ -1,0 +1,13 @@
+<template>
+  <section class="flex items-center justify-center">
+    <base-card class="w-[400px] flex flex-col items-center">
+      <h2>Page not found</h2>
+      <p>
+        This page couldn't be found
+        <router-link class="text-red" to="/">Go Back Home</router-link>
+      </p>
+    </base-card>
+  </section>
+</template>
+
+<script setup></script>

@@ -1,0 +1,83 @@
+<template>
+  <div
+    class="header-content mx-auto w-86 flex items-center justify-center text-white"
+  >
+    <transition>
+      <teleport to="body">
+        <transition name="modal">
+          <base-dialog v-if="inputsAreInvalid" @close="closeDialog">
+            <template v-slot:default>
+              <div
+                class="p-5 flex rounded-[10px] justify-center flex-col items-center im m-auto w-[240px] bg-[rgba(111, 207, 151, 0.20)]"
+              >
+                <img
+                  src="../../assets/payement-page-images/image 11.png"
+                  alt="successful"
+                />
+              </div>
+              <h2 class="mt-[45px] text-[20px] text-center">
+                Booking Successful
+              </h2>
+              <div class="mt-3 flex justify-center">
+                <p class="c">
+                  Congratulations your reservation has been made. You will be
+                  notified 2 days prior the date.
+                </p>
+              </div>
+            </template>
+
+            <template v-slot:actions>
+              <button
+                @click="closeDialog"
+                class="px-3 py-2.5 text-white bg-[var(--mainBlue)] w-full rounded-[6px] search"
+              >
+                View Trip
+              </button>
+            </template>
+          </base-dialog>
+        </transition>
+      </teleport>
+    </transition>
+
+    <div class="content flex items-center flex-col">
+      <h2 class="text-4xl my-5 font-bold">Enjoy Your Dream Vacation</h2>
+      <p class="text-xl">
+        Plan and book our perfect trip with expert advice, travel tips,
+        destination
+      </p>
+      <p class="text-xl">information and inspiration from us</p>
+    </div>
+  </div>
+
+  <div
+    class="shadow-2xl search rounded-lg w-[77%] h-16 bg-white m-auto -translate-y-1/2"
+  >
+    <keep-alive>
+      <SearchForm />
+    </keep-alive>
+  </div>
+</template>
+
+<script setup>
+import SearchForm from "./HeaderSearchForm.vue";
+import { onMounted } from "vue";
+
+onMounted(() => {});
+</script>
+
+<style scoped>
+.header-content {
+  border-radius: 10px;
+}
+.header-content {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    ),
+    url("../../../assets/home-images/f05ea716209b4ede5a3107407feb60d4.jpeg");
+  background-size: cover;
+  background-position: 0% 27%;
+  height: 500px;
+}
+</style>

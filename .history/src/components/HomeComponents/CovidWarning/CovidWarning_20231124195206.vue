@@ -1,0 +1,28 @@
+<template>
+  <div class="w-86 mx-auto covid flex items-center rounded-lg mt-[50px]">
+    <figure>
+      <img
+        src="@/assets/covid-warning-image/danger 1.svg"
+        class="ml-16"
+        width="20"
+        height="20"
+        alt="danger warning"
+      />
+    </figure>
+    <p class="mx-5 my-6">
+      Check the latest COVID-19 restrictions before you travel.
+      <a href="#">Learn more</a>
+    </p>
+  </div>
+</template>
+
+<script setup></script>
+
+<style scoped>
+.covid {
+  background: #fcefca;
+}
+a {
+  color: var(--mainBlue);
+}
+</style>

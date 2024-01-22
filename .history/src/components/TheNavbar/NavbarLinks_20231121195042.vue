@@ -1,0 +1,29 @@
+<template>
+  <div class="gap-12 flex items-start">
+    <router-link :class="textColor" to="/">Home</router-link>
+    <router-link :class="textColor" to="/about">Discover</router-link>
+    <router-link :class="textColor" to="/about">Activities</router-link>
+    <router-link :class="textColor" to="/about">About</router-link>
+    <router-link :class="textColor" to="/about">Contact</router-link>
+  </div>
+</template>
+
+<script setup>
+import { onBeforeMount, ref } from "vue";
+import { useRoute } from "vue-router";
+
+// handling navbar Links color in different pages
+const textColor = ref("");
+const route = useRoute();
+
+onBeforeMount(() => {
+  if (route.fullPath === "/search") textColor.value = "";
+  else logoSrc.value = require("@/assets/header-logo/logo.svg");
+});
+</script>
+
+<style scoped>
+a {
+  color: #333;
+}
+</style>

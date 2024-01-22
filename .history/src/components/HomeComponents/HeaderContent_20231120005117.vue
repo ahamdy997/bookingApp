@@ -1,0 +1,39 @@
+<template>
+  <div
+    class="header-content bg-no-repeat h-5/6 m-auto w-86 flex items-center justify-center text-white"
+  >
+    <div class="content flex items-center flex-col">
+      <h2 class="text-4xl my-5">Enjoy Your Dream Vacation</h2>
+      <p class="text-lg">
+        Plan and book our perfect trip with expert advice, travel tips,
+        destination
+      </p>
+      <p class="text-lg">information and inspiration from us</p>
+    </div>
+  </div>
+
+  <div
+    class="h-16 search flex items-center justify-around rounded-lg w-9/12 h-16 bg-white m-auto -translate-y-1/2"
+  >
+    <search-form></search-form>
+  </div>
+</template>
+
+<script setup>
+import SearchForm from "./HeaderSearchForm.vue";
+</script>
+
+<style scoped>
+.header-content {
+  border-radius: 10px;
+}
+.header-content {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    ),
+    url("../../assets/home-images/f05ea716209b4ede5a3107407feb60d4.jpeg");
+  background-size: cover;
+}
+</style>

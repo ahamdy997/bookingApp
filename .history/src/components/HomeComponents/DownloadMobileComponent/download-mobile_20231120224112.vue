@@ -1,0 +1,20 @@
+<template>
+  <section class="w-86 mx-auto mb-12 rounde-lg">
+    <h2>ahmed</h2>
+  </section>
+</template>
+
+<script setup></script>
+
+<style scoped>
+section {
+  /* background-image: url("../../../assets/download-mobile-cover-images/beach.jpeg"); */
+  background: url("../../../assets/download-mobile-cover-images/beach.jpeg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0;
+
+  height: 280px;
+}
+</style>

@@ -1,0 +1,17 @@
+<template>
+  <div class="mt-16 h-10">
+    <p>aa</p>
+  </div>
+</template>
+
+<script setup></script>
+
+<style scoped>
+div {
+  background-color: rgba(235, 235, 235, 1);
+}
+p {
+  width: 100%;
+  margin-right: 14.3%;
+}
+</style>

@@ -1,0 +1,9 @@
+<template>
+  <aside class="mt-5 w-86 m-auto">
+    <h2 class="text-d ml-5 font-semibold">Filter by</h2>
+  </aside>
+</template>
+
+<script setup></script>
+
+<style lang="scss" scoped></style>

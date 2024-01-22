@@ -1,0 +1,395 @@
+<template>
+  <section class="w-full bg-color-secondary">
+    <div class="main_dev m-auto">
+      <h2 class="text-3xl mt-10 font-bold">Secure your reservation</h2>
+      <WarningSec class="-mt-5"></WarningSec>
+    </div>
+    <div class="inner_div flex w-full justify-between m-auto">
+      <div class="left" style="margin-top: 48px">
+        <div class="one bg-white rounded-lg w-full h-80">
+          <div class="w-full bg-color-primary h-16 text-white rounded-lg">
+            <div
+              class="flex bg-[var(--mainBlue)] justify-around w-[810px] h-8 relative top-4 text-lg ml-4"
+            >
+              <img
+                src="src/assets/images/secureReservation/security-user 1.svg"
+                alt="security-user"
+              />
+              <p>Room 1</p>
+              <p>2 adults, 1 double bed and 1 twin bed, Non-smoking</p>
+            </div>
+          </div>
+          <!--form-->
+
+          <form class="max-w-sm mt-10 ml-8">
+            <div class="flex justify-around">
+              <div class="mb-5">
+                <label
+                  for="firstName"
+                  class="block mb-2 text-sm text-gray-900 font-bold"
+                  >First Name</label
+                >
+                <input
+                  type="text"
+                  id="firstName"
+                  class="bg-color-secondary border border-color-secondary focus:border focus:border-blue text-gray-900 text-sm rounded-lg focus:bg-white block w-full p-2.5 dark:placeholder-gray-400"
+                  placeholder="First Name"
+                  required
+                />
+              </div>
+              <div class="mb-5">
+                <label
+                  for="lastName"
+                  class="block mb-2 text-sm text-gray-900 font-bold"
+                  >Last Name</label
+                >
+                <input
+                  type="text"
+                  id="lastName"
+                  class="bg-color-secondary border border-color-secondary focus:border focus:border-blue text-gray-900 text-sm rounded-lg focus:bg-white w-full p-2.5 dark:placeholder-gray-400"
+                  placeholder="Last Name"
+                  required
+                />
+              </div>
+            </div>
+            <label class="block mb-2 text-sm text-gray-900 font-bold"
+              >Phone number</label
+            >
+
+            <div class="flex justify-between">
+              <div class="drop w-3/12">
+                <!-- Dropdown menu -->
+                <div>
+                  <div class="relative">
+                    <!-- Dropdown toggle button -->
+                    <button
+                      @click="show = !show"
+                      class="flex items-center p-2 text-gray-900 bg-color-secondary rounded-md w-24"
+                    >
+                      <span class="flex justify-between">
+                        <img :src="flag" />
+                        <span class="ml-4">+61</span>
+                      </span>
+                      <svg
+                        class="w-5 h-5 text-gray-900 dark:text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+
+                    <!-- Dropdown menu -->
+                    <div
+                      v-show="show"
+                      class="absolute right-0 py-2 mt-2 bg-color-secondary rounded-md shadow-xl w-24"
+                    >
+                      <router-link
+                        to="/"
+                        class="block px-4 py-2 text-sm text-gray-900"
+                      >
+                        <span class="flex justify-between">
+                          <img :src="flag" />
+                          <span class="ml-4">+61</span>
+                        </span>
+                      </router-link>
+                      <router-link
+                        to="/"
+                        class="block px-4 py-2 text-sm text-gray-900"
+                      >
+                        <span class="flex justify-between">
+                          <img :src="flag" />
+                          <span class="ml-4">+61</span>
+                        </span>
+                      </router-link>
+                      <router-link
+                        to="/"
+                        class="block px-4 py-2 text-sm text-gray-900"
+                      >
+                        <span class="flex justify-between">
+                          <img :src="flag" />
+                          <span class="ml-4">+61</span>
+                        </span>
+                      </router-link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-5 w-8/12">
+                <input
+                  type="number"
+                  id="phone"
+                  class="bg-color-secondary border border-color-secondary focus:border focus:border-blue text-gray-900 text-sm rounded-lg focus:bg-white w-full p-2.5 dark:placeholder-gray-400"
+                  placeholder="88672778"
+                  required
+                />
+              </div>
+            </div>
+            <div class="flex items-start mb-5">
+              <div class="flex items-center h-5">
+                <input
+                  id="remember"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                  required
+                />
+              </div>
+              <label
+                for="remember"
+                class="ms-2 text-sm text-gray-900 dark:text-gray-300"
+                >Receive text alerts about this trip.</label
+              >
+            </div>
+          </form>
+        </div>
+        <div class="two bg-white rounded-lg w-full mt-9">
+          <div class="w-full bg-color-primary h-16 text-white rounded-lg">
+            <div class="flex w-2/3 h-8 relative top-4 text-lg ml-4">
+              <img
+                src="src/assets/images/secureReservation/card-tick 1.svg"
+                alt="card thick"
+              />
+              <p class="py-1 px-4">Payment options</p>
+            </div>
+          </div>
+          <div class="border-b-2 border-color-secondary">
+            <p class="mt-6 ml-5 border-b-2 border-color-primary w-32 py-2">
+              Debit/Credit Card
+            </p>
+          </div>
+          <div class="visa_Types w-1/2 flex ml-4 mt-7">
+            <div
+              class="visa bg-color-secondary w-20 h-10 rounded-md text-center cursor-pointer"
+            >
+              <img
+                src="src/assets/images/secureReservation/image 6.png"
+                alt="visa"
+                class="m-auto mt-2"
+              />
+            </div>
+            <div
+              class="visa bg-color-secondary w-20 h-10 rounded-md text-center ml-2 cursor-pointer"
+            >
+              <img
+                src="src/assets/images/secureReservation/image 7.png"
+                alt="visa"
+                class="m-auto mt-2"
+              />
+            </div>
+            <div
+              class="visa bg-color-secondary w-20 h-10 rounded-md text-center ml-2 cursor-pointer"
+            >
+              <img
+                src="src/assets/images/secureReservation/image 8.png"
+                alt="visa"
+                class="m-auto mt-3"
+              />
+            </div>
+            <div
+              class="visa bg-color-secondary w-20 h-10 rounded-md text-center ml-2 cursor-pointer"
+            >
+              <img
+                src="src/assets/images/secureReservation/image 10.png"
+                alt="visa"
+                class="m-auto mt-1"
+              />
+            </div>
+          </div>
+          <form>
+            <div class="mb-5 w-1/2 ml-4 mt-7">
+              <label
+                for="firstName"
+                class="block mb-2 text-sm text-gray-900 font-bold"
+                >Name on card</label
+              >
+              <div class="flex">
+                <input
+                  type="text"
+                  id="firstName"
+                  class="bg-color-secondary border border-color-secondary focus:border focus:border-blue text-gray-900 text-sm rounded-lg focus:bg-white block w-full p-2.5 dark:placeholder-gray-400"
+                  placeholder="your Name"
+                  required
+                />
+                <img
+                  src="src/assets/images/secureReservation/tick-circle 1.svg"
+                  alt="thick"
+                  class="px-2"
+                />
+              </div>
+            </div>
+            <div class="mb-5 w-1/2 ml-4 mt-7">
+              <label
+                for="firstName"
+                class="block mb-2 text-sm text-gray-900 font-bold"
+                >Debit/Credit card number</label
+              >
+              <div class="flex">
+                <input
+                  type="number"
+                  id="visaNumber"
+                  class="bg-color-secondary border border-color-secondary focus:border focus:border-blue text-gray-900 text-sm rounded-lg focus:bg-white block w-full p-2.5 dark:placeholder-gray-400"
+                  placeholder="9923464374822293"
+                  required
+                />
+                <img
+                  src="src/assets/images/secureReservation/tick-circle 1.svg"
+                  alt="thick"
+                  class="px-2"
+                />
+              </div>
+            </div>
+            <div class="flex ml-4 mt-7">
+              <div class="mb-5">
+                <label class="block mb-2 text-sm text-gray-900 font-bold"
+                  >Security Code</label
+                >
+                <input
+                  type="number"
+                  id="firstName"
+                  class="bg-color-secondary border border-color-secondary focus:border focus:border-blue text-gray-900 text-sm rounded-lg focus:bg-white block w-full p-2.5 dark:placeholder-gray-400"
+                  placeholder="456"
+                  required
+                />
+              </div>
+              <div class="mb-5 ml-3">
+                <label class="block mb-2 text-sm text-gray-900 font-bold"
+                  >Billing Zip code</label
+                >
+                <div class="flex">
+                  <input
+                    type="number"
+                    id="lastName"
+                    class="bg-color-secondary border border-color-secondary focus:border focus:border-blue text-gray-900 text-sm rounded-lg focus:bg-white w-full p-2.5 dark:placeholder-gray-400"
+                    placeholder="203846"
+                    required
+                  />
+                  <img
+                    src="src/assets/images/secureReservation/tick-circle 1.svg"
+                    alt="thick"
+                    class="px-2"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="three bg-white rounded-lg w-full mt-9 pb-4">
+          <div class="w-full bg-yoyo h-16 text-white rounded-lg">
+            <div class="w-2/3 h-8 relative top-4 text-lg ml-4 text-para">
+              <p class="py-1 px-4">Important information about your booking</p>
+            </div>
+          </div>
+          <ol class="w-3/4 mt-7 ml-10 list-decimal leading-7">
+            <li>
+              This rate is non-refundable. If you change or cancel your booking
+              you will not get a refund or credit to use for a future stay.
+            </li>
+
+            <li>Stay extensions will require a new reservation.</li>
+
+            <li>Front desk staff will greet guests on arrival .</li>
+            <li>
+              No refunds will be issued for late check-in or early check-out.
+            </li>
+          </ol>
+          <p class="w-3/4 mt-4 ml-7">
+            By clicking the button below, I acknowledge that I have reviewed the
+            Privacy Statement and have reviewd and accept the Rules and
+            Restrictions and Terms of Use.
+          </p>
+          <button
+            class="w-1/4 ml-7 mt-6 px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-color-primary rounded-md focus:outline-none"
+          >
+            Complete Booking
+          </button>
+          <div class="flex ml-7 mt-6">
+            <img
+              src="src/assets/images/secureReservation/lock-circle 1.svg"
+              alt="lock"
+            />
+            <p class="mx-1">
+              We use secure transmission and encrypted storage to protect your
+              personal information
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="right" style="margin-top: 48px">
+        <div class="first bg-white rounded-md pb-4">
+          <img :src="imgTwo" alt="”Image”" class="w-full h-50 block" />
+          <h2 class="font-bold text-2xl ml-5 mt-5">Lakeside Motel Warefront</h2>
+          <ul class="flex ml-5">
+            <li><img :src="starOne" class="w-5" /></li>
+            <li><img :src="starOne" class="w-5" /></li>
+            <li><img :src="starOne" class="w-5" /></li>
+            <li><img :src="starOne" class="w-5" /></li>
+            <li><img :src="starTwo" class="w-2.5" /></li>
+            <li class="text-sm px-2"><span>4.5 (1200 Reviews)</span></li>
+          </ul>
+          <ul class="ml-5 mt-5 leading-7">
+            <li class="text-danger">Non refundable</li>
+            <li>Check in: Sunday, March 18, 2022</li>
+            <li>Check out: Tuesday, March 20, 2022</li>
+            <li>2 night stay</li>
+          </ul>
+        </div>
+        <div class="secand bg-white rounded-md pb-4 mt-10">
+          <div class="w-full bg-baby-blue h-16 text-white rounded-lg">
+            <div class="w-2/3 h-8 relative top-4 text-lg ml-4 text-para">
+              <p class="py-1 px-4 font-bold text-xl">Price Details</p>
+            </div>
+          </div>
+          <div class="flex justify-between ml-5 mt-5 w-3/4">
+            <p>1 room X 2 nights</p>
+            <p>$ 120.32</p>
+          </div>
+          <div class="flex justify-between ml-5 mt-5 w-3/4">
+            <p>Tax and service fees</p>
+            <p>$ 8.32</p>
+          </div>
+          <div class="border-b-2 border-color-secondary w-full mt-5"></div>
+          <div class="flex justify-between ml-5 mt-5 w-3/4 font-bold text-xl">
+            <p>Total</p>
+            <p>$ 130</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup></script>
+
+<style scoped>
+.main_dev,
+.inner_div {
+  width: 97%;
+}
+.left {
+  width: 820px;
+  padding-bottom: 20px;
+}
+.right {
+  width: 400px;
+  height: 900px;
+}
+</style>
+<script>
+export default {
+  data() {
+    return {
+      show: false,
+      flag: "src/assets/images/secureReservation/image 5.png",
+      imgTwo: "src/assets/images/secureReservation/Rectangle 68.png",
+      starOne: "src/assets/images/secureReservation/star-s-fill 1.svg",
+      starTwo: "src/assets/images/secureReservation/star-s-fill 5.svg",
+    };
+  },
+};
+</script>

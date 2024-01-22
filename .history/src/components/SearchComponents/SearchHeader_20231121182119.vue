@@ -1,0 +1,16 @@
+<template>
+  <header>
+    <the-logo></the-logo>
+  </header>
+</template>
+
+<script setup>
+//import Navbar
+import TheLogo from "../TheNavbar/TheLogo.vue";
+</script>
+
+<style scoped>
+header {
+  background: linear-gradient(180deg, #2969bf 0%, #144e9d 100%);
+}
+</style>
